@@ -1,0 +1,208 @@
+* {
+    box-sizing: border-box;
+
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    background-color: antiquewhite;
+
+}
+
+.toggle {
+    height: auto;
+    width: 500px;
+    background-color: rgb(207, 206, 206);
+    border-radius: 100px;
+    position: relative;
+    border: 4px solid gray;
+    box-shadow: inset 0px 0px 20px #000;
+}
+
+.kaslar {
+    display: flex;
+    gap: 20px;
+    top: 0;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    margin-top: -30px;
+
+}
+
+.kafa {
+    position: relative;
+    background-color: rgb(235, 235, 12);
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+
+
+}
+
+.sag-kas {
+    width: 50px;
+    height: 10px;
+    border-bottom: 3px solid black;
+    border-radius: 20px;
+    animation-name: kas;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    transform-origin: right;
+}
+
+@keyframes kas {
+    from {}
+
+    to {
+        transform: rotate(12deg);
+    }
+}
+
+.sol-kas {
+    width: 50px;
+    height: 10px;
+    border-bottom: 3px solid black;
+    border-radius: 20px;
+    animation-name: kas1;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    transform-origin: left;
+}
+
+@keyframes kas1 {
+    from {}
+
+    to {
+        transform: rotate(-12deg);
+    }
+}
+
+.agiz {
+    display: block;
+    width: 10px;
+    height: 10px;
+    background-color: black;
+    border-radius: 50%;
+    margin-top: 130px;
+    margin-left: 95px;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    animation-name: agiz;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+}
+
+@keyframes agiz {
+    from {}
+
+    to {
+        transform: scale(2);
+    }
+}
+
+.uyku {
+    width: auto;
+    height: auto;
+    position: absolute;
+    font-size: 10px;
+    margin-top: 130px;
+    margin-left: 115px;
+    color: blueviolet;
+    font-weight: bold;
+    animation: uyku 8s infinite
+}
+
+.uyku1 {
+    width: auto;
+    height: auto;
+    position: absolute;
+    margin-top: 110px;
+    margin-left: 110px;
+    color: red;
+    font-weight: bold;
+    animation: uyku 6s infinite
+}
+
+@keyframes uyku {
+    from {}
+
+    to {
+        margin-top: 80px;
+        margin-left: 150px;
+        transform: scale(1.5);
+    }
+}
+
+.kafa:hover {
+
+    .agiz,
+    .uyku,
+    .uyku1 {
+        display: none;
+        transition: 2s;
+    }
+
+    .sag-kas,
+    .sol-kas {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background-color: black;
+        animation-name: uyanik;
+        animation-duration: .1s;
+        animation-iteration-count: 4;
+        animation-direction: alternate;
+        animation-delay: 1s;
+
+    }
+
+    .kaslar {
+        animation-name: uyanik-hareket;
+        animation-duration: 2s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-delay: 2s;
+        transition: 1s;
+    }
+}
+
+@keyframes uyanik {
+    from {}
+
+    to {
+        height: 1px;
+    }
+}
+
+@keyframes uyanik-hareket {
+    0% {}
+
+    25% {
+        margin-left: 20px;
+    }
+
+    50% {
+        margin-left: -20px;
+    }
+
+    75% {
+        margin-left: -20px;
+    }
+
+    100% {
+        margin-left: 20px;
+    }
+}
